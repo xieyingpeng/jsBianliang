@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>九宫格布局</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				
+			}
+			#wrap{
+				overflow: hidden;
+			}
+			#wrap.item{
+				width: 248px;
+				font-size: 13px;
+				height: 360px;
+			}
+			#wrap.item.title{
+				width: 248px;
+				height: 30px;
+				line-height: 30px;
+				overflow: hidden;
+				margin-bottom: 10px;
+			}
+			.imgContainer{
+				width: 248px;
+				display: table-cell;
+				text-align: center;
+			}
+			#wrap.item.price{
+				color: #ff670;
+				fo
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cols">
+			<botton>3列</botton>
+			<botton>4列</botton>
+			<botton>5列</botton>
+		</div>
+		<div id="wrap">
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+			<div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div><div class="item">
+				<div class="imgContainer">
+					<img src="../project3/img4/作业1.jpg" alt="" >
+				</div>
+				<p class="title">哈哈</p>
+				<p class="price">￥69</p>
+			</div>
+		</div>
+		<div id="">
+			
+		</div>
+		<script type="text/javascript">
+			//获取标签
+			var btns = doucment.getElementsByTagName('button');
+			var item = doucment.getElementsByClassName('item');
+			//监听按钮的点击
+			/* btns[0].onclick = function(){
+				var itemWidth = 248;
+				for (var i =0 ; i < item.length ; i++){
+					item[i].style.float = 'left';
+					item[i].parentNode.style.width = 3*itemWidth+'px';
+				}
+			} */
+			for (var j = 0 ; j < 3 ; j++){
+				btns[j].onclick = function(){
+					floats(j+3);
+				}
+			}
+			function floats(colsNum){
+				var itemWidth = 248;
+				for (var i =0 ; i < item.length ; i++){
+					item[i].style.float = 'left';
+					item[i].parentNode.style.width = colsNum*itemWidth+'px';
+				}
+			}e
+		</script>
+	</body>
+</html>

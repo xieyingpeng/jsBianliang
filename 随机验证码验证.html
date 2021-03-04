@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>验证随机验证码</title>
+		<style type="text/css">
+			#code{
+				width: 100px;
+				height: 100px;
+				background-color: #ddd;
+				padding: 10px;
+				line-height: 100px;
+				text-align: center;
+				font-size: 20px;
+				color: red;
+				font-weight: bold;
+			}
+			input{
+				outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="code">
+			
+		</div>
+		<input type="text" name="" id="newCode" value="" />
+		<input type="button" name="" id="validate" value="验证" />
+		<script type="text/javascript">
+			window.onload = function(){
+				var code;//保存全局与输入的验证码进行校验
+				//获取对应的标签
+				var codeDiv = doucment.getElementById('code');
+				var newCodeInput = doucment.getElementById('newCode');
+				var validate = doucment.getElementById('validate');
+				//加载页面获取对应的验证码
+				creatCode();
+				//获取min 到max之间的整数(1-100)
+				function random(min ,max){
+					return Math.floor(Math.random()*(max-min)+min);
+				}
+				//设置默认的空的字符串
+				function.creatCode(){
+					code ='';
+					var codeLength  = 4 ;
+					var randomCode = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D'];
+					for (var i = 0 ; i < randomCode.length; i++){
+						//设置随机范围
+						var index = random(0,14);
+						code += randomCode[index];
+					}
+					codeDiv.innerHTML = code ;
+				}
+				//验证按钮校验
+				validate.onclick = function(){
+					//获取用户输入的验证码
+					var newCode = newCodeInput.value.toUpperCase();
+					if(newCode === code){
+						alert("验证码正确");
+						//window.location.href = '';//跳转网址
+					} else {
+						alert("验证码输入错误！请重新输入");
+						//把原来输入的值置为空
+						newCodeInput.value = '';
+						//重新获取验证码
+						creatCode();
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
